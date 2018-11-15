@@ -20,6 +20,7 @@ Dependencies:
 ```javascript
 var remark = require('remark');
 var toc = require('mdast-util-toc');
+
 ```
 
 Parse:
@@ -35,12 +36,14 @@ var node = remark().parse([
     '## Delta',
     ''
 ].join('\n'));
+
 ```
 
 TOC:
 
 ```javascript
 var result = toc(node);
+
 ```
 
 Yields:
@@ -51,7 +54,13 @@ Yields:
   map: 
    { type: 'list',
      ordered: false,
-     children: [ { type: 'listItem', loose: true, children: [Array] } ] } }
+     spread: true,
+     children: 
+      [ { type: 'listItem', loose: true, spread: true, children: [Array] } ] } }
+```
+
+```javascript
+
 ```
 
 ## API
